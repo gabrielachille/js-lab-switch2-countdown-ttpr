@@ -21,7 +21,7 @@
    The second argument is the id of the element that
    will display the timer.
 ------------------------------------------------------ */
-CountDownToMario('06/05/2025 12:01 AM', 'countdown');
+CountDownToMario("06/05/2025 12:01 AM", "countdown");
 
 /**
  *  Builds a self-updating countdown.
@@ -35,11 +35,18 @@ function CountDownToMario(endTime, divId) {
   /* 👉 Time constants (leave these as-is): */
   const _second = 1000;
   const _minute = _second * 60;
-  const _hour   = _minute * 60;
-  const _day    = _hour * 24;
+  const _hour = _minute * 60;
+  const _day = _hour * 24;
 
   /* STEP 2: Declare any variables you’ll need here
             (e.g. interval id). */
+
+  let days = Math.floor(end / (_day * 1000));
+  let hours = Math.floor(end / (_day * 1000));
+  let minutes = Math.floor(end / (_day * 1000));
+  let seconds = Math.floor(end / (_day * 1000));
+
+  document.getElementById("countdown").innerHTML = days + " days "+ ;
 
   /* STEP 3: Write an inner `showRemaining()` function:
        • get current time (`new Date()`)
@@ -76,4 +83,4 @@ function CountDownToMario(endTime, divId) {
 /* ======================================================
    🎉  BONUS  — optional extras
    ------------------------------------------------------
-   • Add a confetti explosion (see confetti.js) - Check js in 
+   • Add a confetti explosion (see confetti.js) - Check js in */
