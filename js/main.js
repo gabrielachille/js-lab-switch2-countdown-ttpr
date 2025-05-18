@@ -42,11 +42,19 @@ function CountDownToMario(endTime, divId) {
             (e.g. interval id). */
 
   let days = Math.floor(end / (_day * 1000));
-  let hours = Math.floor(end / (_day * 1000));
+  let hours = Math.floor(end / (_hour * 1000));
   let minutes = Math.floor(end / (_day * 1000));
   let seconds = Math.floor(end / (_day * 1000));
 
-  document.getElementById("countdown").innerHTML = days + " days "+ ;
+  document.getElementById("countdown").innerHTML =
+    days +
+    " days " +
+    hours +
+    " hours " +
+    minutes +
+    " minutes " +
+    seconds +
+    " seconds";
 
   /* STEP 3: Write an inner `showRemaining()` function:
        • get current time (`new Date()`)
