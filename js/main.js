@@ -40,11 +40,13 @@ function CountDownToMario(endTime, divId) {
 
   /* STEP 2: Declare any variables you’ll need here
             (e.g. interval id). */
+    
+    const timeLeft = end - Date.now();
 
-  let days = Math.floor(end / (_day * 1000));
-  let hours = Math.floor(end / (_hour * 1000));
-  let minutes = Math.floor(end / (_day * 1000));
-  let seconds = Math.floor(end / (_day * 1000));
+    const days = Math.floor(timeLeft / (_day ));
+    const hours = Math.floor((timeLeft %_day )/ (_hour));
+    const minutes = Math.floor((timeLeft %_hour )/ (_minute));
+    const seconds = Math.floor((timeLeft %_minute )/ (_second));
 
   document.getElementById("countdown").innerHTML =
     days +
@@ -70,7 +72,9 @@ function CountDownToMario(endTime, divId) {
 
   /* STEP 5: Repeat `showRemaining()` every second
             with `setInterval`. */
+            const timer = setInterval(CountDownToMario, 1000);
 }
+
 
 /* ======================================================
    📌  HINTS  — uncomment / tweak as you implement
