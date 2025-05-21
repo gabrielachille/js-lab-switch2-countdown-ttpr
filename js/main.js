@@ -56,21 +56,25 @@ function CountDownToMario(endTime, divId) {
     const hours = Math.floor((timeLeft % _day) / _hour);
     const minutes = Math.floor((timeLeft % _hour) / _minute);
     const seconds = Math.floor((timeLeft % _minute) / _second);
+    const pad = n => String(n).padStart(2, '0');
 
     if (timeLeft <= 0) {
       document.getElementById(divId).textContent =
         "Time to get your Switch 2!!!";
+        return;
     }
+
 
     document.getElementById(
       divId
-    ).textContent = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+    ).textContent = `${days} days ${pad(hours)} hours ${minutes} minutes ${seconds} seconds`;
   }
 
   /* STEP 4: Call `showRemaining()` once so the timer
             appears immediately. */
 
   showRemaining();
+
 
   /* STEP 5: Repeat `showRemaining()` every second
             with `setInterval`. */
@@ -81,17 +85,17 @@ function CountDownToMario(endTime, divId) {
    📌  HINTS  — uncomment / tweak as you implement
    ------------------------------------------------------
    • Two-digit padding helper
-       // const pad = n => String(n).padStart(2, '0');
 
    • Read release date from HTML
        // const div    = document.getElementById(divId);
        // const target = new Date(div.dataset.release);
 
    • Celebration styles
-       // document.body.classList.add('launched');
+      // document.body.classList.add('launched');
+      // document.getElementById('coinSound').play();
+   
 
    • Play sound once
-       // document.getElementById('coinSound').play();
 ====================================================== */
 /* ======================================================
    🎉  BONUS  — optional extras
